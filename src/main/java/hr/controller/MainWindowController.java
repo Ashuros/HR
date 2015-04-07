@@ -141,6 +141,10 @@ public class MainWindowController {
             //Show open file dialog
             file = fileChooser.showOpenDialog(null);
 
+            if (file == null) {
+                return;
+            }
+
             stage = (Stage) btnLoadBackupData.getScene().getWindow();
             stage.setTitle("Load backup data");
             loader = new FXMLLoader(getClass().getResource("/fx/enterDelimeter.fxml"));
